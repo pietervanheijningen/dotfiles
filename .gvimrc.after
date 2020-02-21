@@ -1,0 +1,3 @@
+color onedark
+nmap <D-Esc> :NERDTreeToggle<cr>
+

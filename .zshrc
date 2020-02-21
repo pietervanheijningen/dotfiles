@@ -107,8 +107,11 @@ if [[ $PWD == $HOME ]]; then
     cd ~/_~
 fi
 
-# make defualt editor nano
-export EDITOR=nano
+# make defualt editor vim
+export EDITOR=gvim
+alias nano=gvim
+alias vim=gvim
+#alias vi=gvim
 
 # use unix based programs instead of freebsd
 PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
@@ -128,7 +131,7 @@ export GOPATH=$HOME/go
 PATH=$PATH:$GOPATH/bin
 
 # run in a pipe to open html in chrome
-alias chrome='base64 -w 0 | read val; chrome-cli open "data:text/html;base64,$val" >/dev/null' 
+alias chrome='base64 -w 0 | read val; chrome-cli open "data:text/html;base64,$val" >/dev/null'
 
 # syntax highlighting for less
 #LESSPIPE=`which src-hilite-lesspipe.sh`
@@ -149,20 +152,8 @@ ide() {
   fi
 }
 
+#magit shit
+#alias magit="emacs --execute \"(add-hook 'dired-mode-hook 'magit-status-setup-buffer)\" ."" &"
 
-# phpbrew
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
-export PATH="/usr/local/opt/openssl/bin:$PATH"
-export PATH="/usr/local/opt/libxml2/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/icu4c/lib"
-export CPPFLAGS="-I/usr/local/opt/icu4c/include"
-export LDFLAGS="-L/usr/local/opt/openssl/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl/include"
-export LDFLAGS="-L/usr/local/opt/libxml2/lib"
-export CPPFLAGS="-I/usr/local/opt/libxml2/include"
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-export LDFLAGS="-L/usr/local/opt/libedit/lib"
-export CPPFLAGS="-I/usr/local/opt/libedit/include"
-export LDFLAGS="-L/usr/local/opt/readline/lib"
-export CPPFLAGS="-I/usr/local/opt/readline/include"
+# stop homebrew from autoupdating every nanosecond of its existance
+export HOMEBREW_NO_AUTO_UPDATE=1
