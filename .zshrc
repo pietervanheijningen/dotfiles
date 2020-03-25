@@ -113,7 +113,7 @@ alias nano=gvim
 alias vim=gvim
 #alias vi=gvim
 
-# use unix based programs instead of freebsd
+# use gnu based programs instead of freebsd
 PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 PATH="/usr/local/opt/curl/bin:$PATH"
@@ -133,17 +133,15 @@ PATH=$PATH:$GOPATH/bin
 # run in a pipe to open html in chrome
 alias chrome='base64 -w 0 | read val; chrome-cli open "data:text/html;base64,$val" >/dev/null'
 
-# syntax highlighting for less
-#LESSPIPE=`which src-hilite-lesspipe.sh`
-#export LESSOPEN="| ${LESSPIPE} %s"
-#export LESS=' -R -F '
-
 # common directory shortcuts
+# home
 alias h="cd ~/_~"
+# git repos
 alias g="cd ~/_repos"
+# java practice thats not on git
 alias i="cd ~/IdeaProjects"
 
-# start working on a repository
+# start working on a repository w/ intellj
 ide() {
   if [ -d "$1" ]; then
     idea $1 && cd $1 && git status;
@@ -152,8 +150,8 @@ ide() {
   fi
 }
 
-#magit shit
-#alias magit="emacs --execute \"(add-hook 'dired-mode-hook 'magit-status-setup-buffer)\" ."" &"
-
 # stop homebrew from autoupdating every nanosecond of its existance
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+# stop zsh from prompting me every nanosecond of its existance
+export DISABLE_UPDATE_PROMPT=true
