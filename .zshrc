@@ -108,10 +108,7 @@ if [[ $PWD == $HOME ]]; then
 fi
 
 # make defualt editor vim
-export EDITOR=gvim
-alias nano=gvim
-alias vim=gvim
-#alias vi=gvim
+export EDITOR=vim
 
 # use gnu based programs instead of freebsd
 PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
@@ -155,3 +152,15 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 # stop zsh from prompting me every nanosecond of its existance
 export DISABLE_UPDATE_PROMPT=true
+
+# make ls have colors
+alias ls="ls --color=yes"
+
+# stop docker-compose typo's lol
+docker() {
+    if [[ $1 == "compose" ]]; then
+        command docker-compose "${@:2}"
+    else
+        command docker "$1"
+    fi
+}
