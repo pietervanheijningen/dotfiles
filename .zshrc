@@ -107,7 +107,7 @@ if [[ $PWD == $HOME ]]; then
     cd ~/_~
 fi
 
-# make defualt editor vim
+# make default editor vim
 export EDITOR=vim
 
 # use gnu based programs instead of freebsd
@@ -138,7 +138,7 @@ alias g="cd ~/_repos"
 # java practice thats not on git
 alias i="cd ~/IdeaProjects"
 
-# start working on a repository w/ intellj
+# start working on a repository w/ intellij
 ide() {
   if [ -d "$1" ]; then
     idea $1 && cd $1 && git status;
@@ -147,10 +147,10 @@ ide() {
   fi
 }
 
-# stop homebrew from autoupdating every nanosecond of its existance
+# stop homebrew from autoupdating every nanosecond of its existence
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-# stop zsh from prompting me every nanosecond of its existance
+# stop zsh from prompting me every nanosecond of its existence
 export DISABLE_UPDATE_PROMPT=true
 
 # make ls have colors
