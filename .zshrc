@@ -161,6 +161,6 @@ docker() {
     if [[ $1 == "compose" ]]; then
         command docker-compose "${@:2}"
     else
-        command docker "$1"
+        command docker "${@:1}"
     fi
 }
