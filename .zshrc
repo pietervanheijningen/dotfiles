@@ -104,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 
 # make default dir ~/_~
 if [[ $PWD == $HOME ]]; then
-    cd ~/_~
+    cd ~/_
 fi
 
 # make default editor vim
@@ -132,7 +132,7 @@ alias chrome='base64 -w 0 | read val; chrome-cli open "data:text/html;base64,$va
 
 # common directory shortcuts
 # home
-alias h="cd ~/_~"
+alias h="cd ~/_"
 # git repos
 alias g="cd ~/_repos"
 # java practice thats not on git
