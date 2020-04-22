@@ -142,8 +142,10 @@ alias i="cd ~/IdeaProjects"
 ide() {
   if [ -d "$1" ]; then
     idea $1 && cd $1 && git status;
+  elif [ -f "$1" ]; then
+    idea $1;
   else
-    echo "$1 is not a directory \n"
+    echo "$1 is not a directory or a file \n"
   fi
 }
 
