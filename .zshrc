@@ -166,3 +166,6 @@ docker() {
         command docker "${@:1}"
     fi
 }
+
+# mysql login cmd
+alias sql="mysql -u root -ptest123"
