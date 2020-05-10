@@ -169,3 +169,14 @@ docker() {
 
 # mysql login cmd
 alias sql="mysql -u root -ptest123"
+
+pcp() {
+    echo -n "Commit message: "
+      read message
+    echo
+
+    git pull && \
+    git add -u && \
+    git commit -m $message && \
+    git push
+}
