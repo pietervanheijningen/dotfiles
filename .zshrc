@@ -154,6 +154,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 # stop zsh from prompting me every nanosecond of its existence
 export DISABLE_UPDATE_PROMPT=true
+export DISABLE_AUTO_UPDATE="true"
 
 # make ls have colors
 alias ls="ls --color=yes"
