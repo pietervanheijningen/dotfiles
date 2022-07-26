@@ -173,9 +173,7 @@ alias sql="mysql -u root -ptest123"
 
 pcp() {
     bash -c '
-    echo -n "Commit message: "
-      read -e message
-    echo
+    read -ep "Commit message: " message
 
     git pull && \
     git add -u && \
