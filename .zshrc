@@ -179,7 +179,7 @@ pcp() {
 
     git pull && \
     git add -u && \
-    git commit -m $message && \
+    git commit -m "${message}" && \
     git push'
 }
 export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
