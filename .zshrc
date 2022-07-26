@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+DISABLE_UPDATE_PROMPT=true
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/pvh/.oh-my-zsh"
 
@@ -8,7 +8,7 @@ export ZSH="/Users/pvh/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="candy"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -114,7 +114,7 @@ export EDITOR=vim
 PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 PATH="/usr/local/opt/curl/bin:$PATH"
-PATH="/Users/pvh/Library/Python/3.7/bin:$PATH"
+PATH="/usr/local/Cellar/python@3.9/3.9.8/bin:$PATH"
 export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
 
 # zsh plugin(s)
@@ -172,12 +172,18 @@ docker() {
 alias sql="mysql -u root -ptest123"
 
 pcp() {
+    bash -c '
     echo -n "Commit message: "
-      read message
+      read -e message
     echo
 
     git pull && \
     git add -u && \
     git commit -m $message && \
-    git push
+    git push'
 }
+export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
